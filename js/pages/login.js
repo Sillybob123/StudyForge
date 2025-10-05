@@ -17,7 +17,7 @@ export function render() {
                         <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
                         <input type="password" id="loginPassword" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
                     </div>
-                    <div id="loginError" class="hidden text-red-600 text-sm"></div>
+                    <div id="loginError" class="hidden text-red-600 text-sm bg-red-50 p-3 rounded-lg"></div>
                     <button type="submit" class="w-full py-3 button-primary text-white rounded-lg font-semibold text-lg">
                         Log In
                     </button>
@@ -37,6 +37,10 @@ export function init() {
         const email = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginPassword').value;
         const errorDiv = document.getElementById('loginError');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Logging in...';
 
         const { login } = await import('../auth.js');
         const result = await login(email, password);
@@ -46,6 +50,8 @@ export function init() {
         } else {
             errorDiv.textContent = result.error;
             errorDiv.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Log In';
         }
     });
 }

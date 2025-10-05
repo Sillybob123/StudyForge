@@ -2,6 +2,7 @@
 import { db } from '../firebase-config.js';
 import { currentUser } from '../auth.js';
 import { collection, query, where, getDocs, orderBy, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { formatDate } from '../utils/helpers.js';
 
 export function render() {
     return `
@@ -11,9 +12,10 @@ export function render() {
                 <p class="text-gray-600" id="welcomeText">Welcome back!</p>
             </div>
             
-            <div class="mb-8">
-                <button onclick="window.location.hash='/create-set'" class="px-8 py-4 button-primary text-white rounded-xl font-bold text-lg shadow-lg">
-                    ➕ Create Study Set
+            <div class="mb-8 flex flex-wrap gap-4">
+                <button onclick="window.location.hash='/create-set'" class="px-8 py-4 button-primary text-white rounded-xl font-bold text-lg shadow-lg flex items-center space-x-2">
+                    <span>➕</span>
+                    <span>Create Study Set</span>
                 </button>
             </div>
 
@@ -52,28 +54,34 @@ async function loadStudySets() {
 
         if (sets.length === 0) {
             container.innerHTML = `
-                <div class="col-span-full bg-white p-12 rounded-2xl text-center border-2 border-dashed border-gray-300">
+                <div class="col-span-full bg-white p-12 rounded-2xl text-center border-2 border-dashed border-gray-300 animate-fade-in">
                     <div class="text-6xl mb-4">📚</div>
                     <h3 class="text-2xl font-bold text-gray-700 mb-2">No study sets yet</h3>
                     <p class="text-gray-600 mb-6">Create your first set to get started!</p>
-                    <button onclick="window.location.hash='/create-set'" class="px-8 py-3 button-primary text-white rounded-lg font-semibold">
-                        Create Your First Set
+                    <button onclick="window.location.hash='/create-set'" class="px-8 py-3 button-primary text-white rounded-lg font-semibold inline-flex items-center space-x-2">
+                        <span>➕</span>
+                        <span>Create Your First Set</span>
                     </button>
                 </div>
             `;
         } else {
             container.innerHTML = sets.map(set => `
-                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-100">
+                <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-100 animate-fade-in">
                     <div class="flex justify-between items-start mb-4">
                         <div class="text-4xl">📖</div>
-                        <button onclick="window.deleteSet('${set.id}')" class="text-red-500 hover:text-red-700 transition" title="Delete">
+                        <button onclick="window.deleteSet('${set.id}')" class="text-red-500 hover:text-red-700 transition p-2 hover:bg-red-50 rounded-lg" title="Delete">
                             🗑️
                         </button>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900">${set.title}</h3>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">${set.description || 'No description'}</p>
-                    <p class="text-sm text-gray-500 mb-4">${set.cardCount || 0} cards</p>
-                    <button onclick="window.location.hash='/study/${set.id}'" class="w-full py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition font-medium">
+                    <a href="#/set/${set.id}" class="block">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900 hover:text-blue-600 transition">${set.title}</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">${set.description || 'No description'}</p>
+                    </a>
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <span>${set.cardCount || 0} cards</span>
+                        <span>${formatDate(set.updatedAt?.toDate ? set.updatedAt.toDate() : set.updatedAt)}</span>
+                    </div>
+                    <button onclick="window.location.hash='/study/${set.id}/flashcards'" class="w-full py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition font-medium">
                         Study Now
                     </button>
                 </div>
@@ -83,7 +91,8 @@ async function loadStudySets() {
         console.error('Error loading sets:', error);
         container.innerHTML = `
             <div class="col-span-full bg-red-50 p-6 rounded-lg text-center text-red-700">
-                Error loading study sets. Please refresh the page.
+                <p class="font-semibold mb-2">Error loading study sets</p>
+                <p class="text-sm">Please refresh the page or try again later.</p>
             </div>
         `;
     }
@@ -91,7 +100,7 @@ async function loadStudySets() {
 
 // Global delete function
 window.deleteSet = async (setId) => {
-    if (!confirm('Are you sure you want to delete this study set?')) return;
+    if (!confirm('Are you sure you want to delete this study set? This action cannot be undone.')) return;
     
     try {
         await deleteDoc(doc(db, 'studySets', setId));

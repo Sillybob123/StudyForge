@@ -18,10 +18,10 @@ export function render() {
                         <input type="email" id="signupEmail" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password (min. 6 characters)</label>
                         <input type="password" id="signupPassword" required minlength="6" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
                     </div>
-                    <div id="signupError" class="hidden text-red-600 text-sm"></div>
+                    <div id="signupError" class="hidden text-red-600 text-sm bg-red-50 p-3 rounded-lg"></div>
                     <button type="submit" class="w-full py-3 button-primary text-white rounded-lg font-semibold text-lg">
                         Sign Up
                     </button>
@@ -42,6 +42,10 @@ export function init() {
         const email = document.getElementById('signupEmail').value;
         const password = document.getElementById('signupPassword').value;
         const errorDiv = document.getElementById('signupError');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Creating account...';
 
         const { signup } = await import('../auth.js');
         const result = await signup(email, password, name);
@@ -51,6 +55,8 @@ export function init() {
         } else {
             errorDiv.textContent = result.error;
             errorDiv.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Sign Up';
         }
     });
 }
