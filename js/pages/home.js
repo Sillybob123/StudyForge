@@ -1,75 +1,102 @@
-// Home Page
+// Premium Apple-Style Home Page
 export function render() {
     return `
-        <div class="container mx-auto px-4">
-            <div class="text-center py-20 animate-fade-in">
-                <div class="mb-8">
-                    <div class="text-6xl mb-4 animate-bounce">📚</div>
-                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
-                        Study Smarter with <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">StudyForge</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                        Create flashcards, import from Anki, and master any subject with 4 intelligent study modes
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                    <button onclick="window.location.hash='/signup'" class="px-8 py-4 bg-blue-600 text-white text-xl rounded-xl hover:bg-blue-700 transition shadow-lg font-bold hover:scale-105 duration-200">
-                        Get Started Free
-                    </button>
-                    <button onclick="window.location.hash='/login'" class="px-8 py-4 border-2 border-blue-600 text-blue-600 text-xl rounded-xl hover:bg-blue-50 transition font-bold">
-                        Log In
-                    </button>
-                </div>
+        <div class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white">
+            <!-- Hero Section -->
+            <div class="container mx-auto px-4">
+                <div class="text-center py-24 animate-fade-in">
+                    <!-- Main Heading -->
+                    <div class="mb-12">
+                        <div class="text-8xl mb-8 animate-bounce inline-block">📚</div>
+                        <h1 class="text-7xl md:text-8xl font-bold text-gray-900 mb-6 tracking-tight leading-none">
+                            Study
+                            <span class="block mt-2 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">Smarter</span>
+                        </h1>
+                        <p class="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+                            Create flashcards, import from Anki, and master any subject with intelligent study tools designed for modern learners.
+                        </p>
+                    </div>
 
-                <!-- Features -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-20">
-                    <div class="bg-white p-6 rounded-2xl shadow-xl card-hover border border-gray-100">
-                        <div class="gradient-blue w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-3xl">📇</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">Flashcards</h3>
-                        <p class="text-gray-600">Classic flip cards for quick review</p>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-24">
+                        <button onclick="window.location.hash='/signup'" class="group px-10 py-5 bg-blue-600 text-white text-xl rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-2xl hover:scale-105 duration-300">
+                            <span class="flex items-center justify-center space-x-2">
+                                <span>Get Started</span>
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <button onclick="window.location.hash='/login'" class="px-10 py-5 bg-white text-gray-900 text-xl rounded-full font-semibold hover:bg-gray-50 transition-all border-2 border-gray-200 hover:border-gray-300 hover:scale-105 duration-300">
+                            Log In
+                        </button>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl card-hover border border-gray-100">
-                        <div class="gradient-purple w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-3xl">✍️</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">Write Mode</h3>
-                        <p class="text-gray-600">Test yourself by typing answers</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl card-hover border border-gray-100">
-                        <div class="gradient-pink w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-3xl">🔊</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">Spell Mode</h3>
-                        <p class="text-gray-600">Practice with audio pronunciation</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl card-hover border border-gray-100">
-                        <div class="gradient-green w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-white text-3xl">🧠</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">Learn Mode</h3>
-                        <p class="text-gray-600">Smart adaptive learning</p>
-                    </div>
-                </div>
 
-                <!-- Import/Export Feature -->
-                <div class="max-w-4xl mx-auto mt-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-900">📥 Import & Export</h2>
-                    <p class="text-lg text-gray-700 mb-4">Seamlessly import from Anki or CSV, and export your sets anytime</p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-xl">
-                            <span class="text-2xl mb-2 block">📥</span>
-                            <p class="font-semibold">Import from Anki</p>
-                            <p class="text-sm text-gray-600">Bring your existing decks</p>
+                    <!-- Feature Cards -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                        <div class="group bg-white rounded-3xl p-8 border border-gray-100 hover:border-blue-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                📇
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Flashcards</h3>
+                            <p class="text-gray-600 leading-relaxed">Classic flip cards with smooth animations for quick review sessions</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl">
-                            <span class="text-2xl mb-2 block">📤</span>
-                            <p class="font-semibold">Export to Anki</p>
-                            <p class="text-sm text-gray-600">Take your sets anywhere</p>
+
+                        <div class="group bg-white rounded-3xl p-8 border border-gray-100 hover:border-purple-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                ✍️
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Write Mode</h3>
+                            <p class="text-gray-600 leading-relaxed">Test your knowledge by typing answers and get instant feedback</p>
+                        </div>
+
+                        <div class="group bg-white rounded-3xl p-8 border border-gray-100 hover:border-pink-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                🔊
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Spell Mode</h3>
+                            <p class="text-gray-600 leading-relaxed">Practice pronunciation with audio playback and spelling tests</p>
+                        </div>
+
+                        <div class="group bg-white rounded-3xl p-8 border border-gray-100 hover:border-green-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                🧠
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Learn Mode</h3>
+                            <p class="text-gray-600 leading-relaxed">Smart adaptive learning with mixed question types</p>
                         </div>
                     </div>
-                </div>
 
-                <!-- CTA -->
-                <div class="mt-20 gradient-primary rounded-2xl p-12 text-white max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to ace your exams?</h2>
-                    <p class="text-xl mb-8 opacity-90">Join students worldwide studying smarter with StudyForge</p>
-                    <button onclick="window.location.hash='/signup'" class="px-10 py-5 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition shadow-2xl hover:scale-105 duration-200">
-                        Create Your Free Account
-                    </button>
+                    <!-- Import/Export Section -->
+                    <div class="max-w-5xl mx-auto mt-24">
+                        <div class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-3xl p-12 border border-indigo-100 shadow-xl">
+                            <h2 class="text-4xl font-bold mb-6 text-gray-900">Seamless Import & Export</h2>
+                            <p class="text-xl text-gray-700 mb-10 leading-relaxed">Bring your existing Anki decks or start fresh. Export anytime to keep your data portable.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="group bg-white rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1">
+                                    <div class="text-5xl mb-4">📥</div>
+                                    <h3 class="text-xl font-semibold mb-2">Import from Anki</h3>
+                                    <p class="text-gray-600">Bring all your existing study decks instantly</p>
+                                </div>
+                                <div class="group bg-white rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1">
+                                    <div class="text-5xl mb-4">📤</div>
+                                    <h3 class="text-xl font-semibold mb-2">Export Anywhere</h3>
+                                    <p class="text-gray-600">Take your study sets to any platform</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final CTA -->
+                    <div class="mt-32 mb-16">
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-16 text-white shadow-2xl">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to ace your exams?</h2>
+                            <p class="text-xl mb-10 opacity-95 max-w-2xl mx-auto">Join students worldwide who are studying smarter with StudyForge</p>
+                            <button onclick="window.location.hash='/signup'" class="px-12 py-5 bg-white text-blue-600 rounded-full font-bold text-xl hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 duration-300">
+                                Create Your Free Account
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
