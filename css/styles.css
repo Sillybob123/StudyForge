@@ -1,4 +1,4 @@
-/* Apple-Inspired Premium Styles */
+/* Ultra-Professional Modern Styles - No Emojis */
 * {
     margin: 0;
     padding: 0;
@@ -12,41 +12,47 @@ body {
     flex-direction: column;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #fafafa;
+    background: #f7f8fa;
+    color: #282e3e;
 }
 
-.gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
+/* Premium Gradients */
 .gradient-primary {
-    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+    background: linear-gradient(135deg, #4255ff 0%, #3d4eac 100%);
 }
 
 .gradient-blue {
-    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+    background: linear-gradient(135deg, #4255ff 0%, #3d4eac 100%);
 }
 
 .gradient-purple {
-    background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
 }
 
 .gradient-pink {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
 }
 
 .gradient-green {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
-/* Card Hover Effects - Apple Style */
+.gradient-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.gradient-error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Card Hover Effects */
 .card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Flashcard Flip Animation */
@@ -61,7 +67,7 @@ body {
     width: 100%;
     height: 100%;
     min-height: 400px;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 }
 
@@ -78,33 +84,33 @@ body {
     -webkit-backface-visibility: hidden;
     display: flex;
     align-items: center;
-    justify-center;
+    justify-content: center;
     padding: 3rem;
-    border-radius: 24px;
+    border-radius: 16px;
 }
 
 .flip-card-front {
     background: white;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .flip-card-back {
-    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+    background: linear-gradient(135deg, #4255ff 0%, #3d4eac 100%);
     color: white;
     transform: rotateY(180deg);
-    box-shadow: 0 20px 40px rgba(0, 113, 227, 0.3);
+    box-shadow: 0 10px 30px rgba(66, 85, 255, 0.3);
 }
 
-/* Smooth Fade In Animation */
+/* Animations */
 .animate-fade-in {
-    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fadeIn {
     from { 
         opacity: 0; 
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to { 
         opacity: 1; 
@@ -112,10 +118,10 @@ body {
     }
 }
 
-/* Premium Loading Spinner */
+/* Loading Spinner */
 .loading-spinner {
-    border: 3px solid rgba(0, 113, 227, 0.1);
-    border-top: 3px solid #0071e3;
+    border: 3px solid rgba(66, 85, 255, 0.1);
+    border-top: 3px solid #4255ff;
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -132,23 +138,23 @@ body {
     flex: 1;
 }
 
-/* Modal Overlay - Blur Effect */
+/* Modal Overlay */
 .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Premium Buttons */
 .button-primary {
-    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
+    background: linear-gradient(135deg, #4255ff 0%, #3d4eac 100%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    box-shadow: 0 4px 12px rgba(66, 85, 255, 0.3);
 }
 
 .button-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 113, 227, 0.4);
+    box-shadow: 0 8px 20px rgba(66, 85, 255, 0.4);
 }
 
 .button-primary:active {
@@ -166,43 +172,36 @@ body {
     overflow: hidden;
 }
 
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Premium Progress Bar */
+/* Progress Bar */
 .progress-bar {
-    height: 6px;
-    background: rgba(0, 113, 227, 0.1);
+    height: 8px;
+    background: #e5e7eb;
     border-radius: 999px;
     overflow: hidden;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #0071e3 0%, #005bb5 100%);
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 8px rgba(0, 113, 227, 0.5);
+    background: linear-gradient(90deg, #4255ff 0%, #3d4eac 100%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Study Card */
-.study-card {
-    min-height: 400px;
-}
-
-/* Feedback States */
+/* Study States */
 .correct {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     border-color: #10b981;
     color: white;
 }
 
 .incorrect {
-    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     border-color: #ef4444;
+    color: white;
+}
+
+.partial {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-color: #f59e0b;
     color: white;
 }
 
@@ -219,25 +218,24 @@ body {
 .modal-content {
     max-height: 90vh;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
-/* Smooth Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0071e3;
+    background: #4255ff;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #005bb5;
+    background: #3d4eac;
 }
 
 /* Shake Animation */
@@ -247,69 +245,94 @@ body {
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-    20%, 40%, 60%, 80% { transform: translateX(10px); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+    20%, 40%, 60%, 80% { transform: translateX(8px); }
 }
 
-/* Pulse Animation */
-.pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .7; }
-}
-
-/* Bounce Animation */
-.animate-bounce {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(-5%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-        transform: translateY(0);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-}
-
-/* Glass Morphism Effect */
-.glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Text Gradient */
-.text-gradient {
-    background: linear-gradient(135deg, #0071e3 0%, #005bb5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Input Focus States - Apple Style */
+/* Input Focus */
 input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #0071e3;
-    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+    border-color: #4255ff;
+    box-shadow: 0 0 0 3px rgba(66, 85, 255, 0.1);
     transition: all 0.2s ease;
 }
 
-/* Selection Color */
+/* Selection */
 ::selection {
-    background: #0071e3;
+    background: #4255ff;
     color: white;
 }
 
-::-moz-selection {
-    background: #0071e3;
+/* Glass Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Checkpoint Styles */
+.checkpoint-round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.checkpoint-active {
+    background: #4255ff;
     color: white;
+    box-shadow: 0 4px 12px rgba(66, 85, 255, 0.3);
+}
+
+.checkpoint-completed {
+    background: #10b981;
+    color: white;
+}
+
+.checkpoint-pending {
+    background: #e5e7eb;
+    color: #9ca3af;
+}
+
+/* Answer Options */
+.answer-option {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.answer-option:hover {
+    background: #f8fafc;
+    border-color: #4255ff;
+    transform: translateX(4px);
+}
+
+.answer-option.selected {
+    background: #eff6ff;
+    border-color: #4255ff;
+}
+
+.answer-option.correct {
+    background: #d1fae5;
+    border-color: #10b981;
+}
+
+.answer-option.incorrect {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+button, a, input, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Premium Shadow */
@@ -317,15 +340,31 @@ input:focus, textarea:focus, select:focus {
     box-shadow: 
         0 0 0 1px rgba(0, 0, 0, 0.05),
         0 2px 4px rgba(0, 0, 0, 0.05),
-        0 12px 24px rgba(0, 0, 0, 0.05);
+        0 8px 16px rgba(0, 0, 0, 0.05);
 }
 
-/* Smooth transitions on everything */
-* {
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+/* Study Mode Header */
+.study-mode-header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 40;
 }
 
-/* Disable transitions on buttons and interactive elements for better UX */
-button, a, input, textarea {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Results Screen */
+.results-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.results-score {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4255ff 0%, #3d4eac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
